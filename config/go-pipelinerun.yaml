@@ -1,0 +1,27 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: pipelinerun-go-test-
+  labels:
+    app.kubernetes.io/description: PipelineRun
+spec:
+  params:
+    - name: image
+      value: ttl.sh/example-123/go-build-test
+    - name: ARGS
+      value:
+        - fs
+        - --exit-code
+        - "1"
+    - name: IMAGEARGS
+      value:
+        - image
+        - --exit-code
+        - "0"
+  pipelineRef:
+    name: pipeline-go-test
+  timeout: 1h0m0s
+  workspaces:
+    - name: pipeline-pvc
+      persistentVolumeClaim:
+        claimName: pipelinerun-go-test-source-ws-pvc
