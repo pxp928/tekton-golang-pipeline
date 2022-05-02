@@ -1,6 +1,6 @@
 # Golang Tekton Pipeline with signed Image and provenance
 
-This example follows the blog post on Tekton Golang Pipline on [orchestrait.io](https://orchestrait.io/blog/).
+This example follows the blog post on Tekton Golang Pipline on [pxp928.com](https://pxp928.com/posts/2022/03/tekton-golang-pipeline-with-signed-provenance-slsa-level-2/).
 
 ## Prerequisites
 
